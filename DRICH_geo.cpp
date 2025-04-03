@@ -274,7 +274,7 @@ float rimThickness = 0.5; // thickness of the rim in z-direction (unchanged)
 float rimWidth = 5.0;     // increased radial width of the rim (adjustable)
 
 // Define rim solids for inner (minimum) and outer (maximum) edges with increased width
-Tube rimInnerSolid(radiatorRmin - rimWidth, radiatorRmin, aerogelThickness / 2. + rimThickness);
+//Tube rimInnerSolid(radiatorRmin - rimWidth, radiatorRmin, aerogelThickness / 2. + rimThickness);
 Tube rimOuterSolid(radiatorRmax, radiatorRmax + rimWidth, aerogelThickness / 2. + rimThickness);
 
 // rib structure
@@ -328,7 +328,7 @@ for (int i = 0; i < nTilesX; i++) {
 }
 
 // Add rims to the union
-ribUnionSolid = UnionSolid(ribUnionSolid, rimInnerSolid, Transform3D(RotationY(radiatorPitch)));
+//ribUnionSolid = UnionSolid(ribUnionSolid, rimInnerSolid, Transform3D(RotationY(radiatorPitch)));
 ribUnionSolid = UnionSolid(ribUnionSolid, rimOuterSolid, Transform3D(RotationY(radiatorPitch)));
 
 // Intersect the aerogel with the rib and rim union to keep only the overlapping parts
